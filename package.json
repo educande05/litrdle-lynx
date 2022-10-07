@@ -2,7 +2,6 @@
   "name": "litrdle-lynx",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && vite build",
@@ -28,5 +27,8 @@
     "vite": "^3.1.0"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
 }

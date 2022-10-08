@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@stylelint/postcss-css-in-js': ^0.38.0
+  colors: ^1.4.0
   eslint: ^8.24.0
   eslint-config-standard: 17.0.0-1
   eslint-plugin-import: ^2.26.0
@@ -17,6 +18,9 @@ specifiers:
   stylelint: 14.11.0
   stylelint-config-standard: 28.0.0
   vite: ^3.1.0
+
+dependencies:
+  colors: 1.4.0
 
 devDependencies:
   '@stylelint/postcss-css-in-js': 0.38.0_papklg243o36zlhk3s2fwaktna
@@ -610,6 +614,11 @@ packages:
   /colord/2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
     dev: true
+
+  /colors/1.4.0:
+    resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
+    engines: {node: '>=0.1.90'}
+    dev: false
 
   /commander/2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}

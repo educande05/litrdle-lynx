@@ -8,42 +8,11 @@ const readline = require("readline").createInterface({
   output: process.stdout,
 });
 
-// Nuestras variables
-
 // Tu código empieza aquí
 
 function getRandomWord() {
   return (WORDS[Math.floor(Math.random() * WORDS.length)]);
 }
-
-const testring = getRandomWord();
-console.log("La palabra aleatoria es: " + testring); // Para testear, saca por pantalla esa palabra
-const testring2 = "paoc";
-
-const divided1 = testring.split(""); // Convierte el string en un array de carácteres y lo guarda en una variable.
-const divided2 = testring2.split("");// Convierte el string en un array de carácteres y lo guarda en una variable.
-
-const final = [];
-
-/**
- * Método que llama dos arrays y los compara con cada elemento individualmente
- * @constructor
- */
-function compareLetter(divided1, divided2) {
-  for (let i = 0; i < divided1.length; i++) {
-    if (divided1[i] === divided2[i]) { // Si tienen el mismo valor, se colorea verde
-      final.push(divided2[i]);
-      console.log(final[i].green);
-    } else if (divided1.includes(divided2[i])) { // Si tiene mismo valor pero en posiciones distintas, se colorea amarillo
-      final.push(divided2[i]);
-      console.log(final[i].yellow);
-    } else {
-      final.push(divided2[i]); // Si no tiene mismo valor, se colorea rojo
-      console.log(final[i].red);
-    }
-  }
-}
-(compareLetter(divided1, divided2));
 
 function checkIsOnDictionary(word) {
   return WORDS.includes(word) ? word : console.log("Esa palabra no existe en el diccionario!");
@@ -77,14 +46,14 @@ function main() {
   const recursiveAsyncReadLine = function() {
     readline.question(`Introduce una Palabra de tamaño ${WORD_SIZE}: `, function(word) {
       tries++;
-      console.log(rndWord);
-      if (tries === NUM_TRYS) return readline.close();
       console.log(`La palabra ingresada es ${word.green}!`);
       if (checkIsOnDictionary(word)) {
-        let succed, fail, wrongPosition;
-        [succed, fail, wrongPosition] = splitResult(rndWord, word);
-        console.log(succed, fail, wrongPosition);
+        const [succed, fail, wrongPosition] = splitResult(rndWord, word);
+        console.log(`[ ${succed.toString().green} ],` +
+                    `[ ${wrongPosition.toString().yellow} ],` +
+                    `[ ${fail.toString().red} ]`);
       }
+      if (tries === NUM_TRYS) return readline.close();
       recursiveAsyncReadLine();
     });
   };

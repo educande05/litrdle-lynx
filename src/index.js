@@ -11,11 +11,14 @@ const readline = require("readline").createInterface({
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Tu código empieza aquí
 
 =======
 // Nuestras variables
 
+=======
+>>>>>>> f4884bd... landing mockups
 // Tu código empieza aquí
 >>>>>>> af7890b... Input tries now works properly
 function getRandomWord() {
@@ -55,6 +58,7 @@ function main() {
     readline.question(`Introduce una Palabra de tamaño ${WORD_SIZE}: `, function(word) {
       tries++;
 <<<<<<< HEAD
+<<<<<<< HEAD
       console.log(`La palabra ingresada es ${word.green}!`);
       if (checkIsOnDictionary(word)) {
         const [succed, fail, wrongPosition] = splitResult(rndWord, word);
@@ -66,13 +70,20 @@ function main() {
 =======
       console.log(rndWord);
       if (tries === NUM_TRYS) return readline.close();
+=======
+>>>>>>> f4884bd... landing mockups
       console.log(`La palabra ingresada es ${word.green}!`);
       if (checkIsOnDictionary(word)) {
-        let succed, fail, wrongPosition;
-        [succed, fail, wrongPosition] = splitResult(rndWord, word);
-        console.log(succed, fail, wrongPosition);
+        const [succed, fail, wrongPosition] = splitResult(rndWord, word);
+        console.log(`[ ${succed.toString().green} ],` +
+                    `[ ${wrongPosition.toString().yellow} ],` +
+                    `[ ${fail.toString().red} ]`);
       }
+<<<<<<< HEAD
 >>>>>>> af7890b... Input tries now works properly
+=======
+      if (tries === NUM_TRYS) return readline.close();
+>>>>>>> f4884bd... landing mockups
       recursiveAsyncReadLine();
     });
   };
